@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+</head>
+<body>
+    <h1>Weather App</h1>
+    <form id="weatherForm">
+        <label for="city">Enter City:</label>
+        <input type="text" id="city" name="city" required>
+        <button type="submit">Get Weather</button>
+    </form>
+    <div id="weatherResult"></div>
+
+    <script>
+        document.getElementById('weatherForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const city = document.getElementById('city').value;
+            fetch(`/weather?city=${city}`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.error) {
+                        document.getElementById('weatherResult').innerHTML = `<p>Error: ${data.error}</p>`;
+                    } else {
+                        document.getElementById('weatherResult').innerHTML = `
+                            <h2>Weather in ${data.city}</h2>
+                            <p>Temperature: ${data.temperature.toFixed(2)}°C</p>
+                            <p>Condition: ${data.weather_condition}</p>
+                            <p>Wind Speed: ${data.wind_speed_kmh.toFixed(2)} km/h</p>
+                            <p>Wind Direction: ${data.wind_direction}°</p>
+                        `;
+                    }
+                })
+                .catch(error => {
+                    document.getElementById('weatherResult').innerHTML = `<p>Error: ${error}</p>`;
+                });
+        });
+    </script>
+</body>
+</html>

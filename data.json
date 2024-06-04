@@ -1,0 +1,30 @@
+[
+    {
+        "city": "netanya",
+        "temperature_celsius": 31.980000000000018,
+        "weather_condition": "Clear",
+        "wind_speed_kmh": 19.836,
+        "wind_direction": 332
+    },
+    {
+        "city": "dimona",
+        "temperature_celsius": 35.09000000000003,
+        "weather_condition": "Clear",
+        "wind_speed_kmh": 17.424,
+        "wind_direction": 297
+    },
+    {
+        "city": "lisbon",
+        "temperature_celsius": 24.720000000000027,
+        "weather_condition": "Clouds",
+        "wind_speed_kmh": 49.896,
+        "wind_direction": 315
+    },
+    {
+        "city": "barcelona",
+        "temperature_celsius": 25.07000000000005,
+        "weather_condition": "Clouds",
+        "wind_speed_kmh": 31.5,
+        "wind_direction": 220
+    }
+]
