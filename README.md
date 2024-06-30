@@ -1,11 +1,13 @@
 # ApiWeatherApp
 
 This project is a simple Weather API application that retrieves weather data and stores it in a JSON file. The project demonstrates basic DevOps skills such as CI/CD with Jenkins, containerization with Docker, and orchestration with Docker Compose.
-
+![](images/architecture.jpeg)
 # Prerequisites
 
 docker 
 Jenkins
+python 3 
+pip 
 
 # Project Structure
 
@@ -79,16 +81,19 @@ pipeline {
 ```
 Make sure to edit your Jenkinsfile with your dockerhub username and add your docker credentialsId (lines 9-13) to the Jenkinsfile
 
-5. log into your jenkins container:
+5. log in to jenkins server :
 
 NOTE: On your web browser
 ```
 localhost:8080
 ```
+![](images/jenkins1.png)
 
 6. Create new pipeline on jenkins:
 
 On jenkins dashboard choose new item then choose pipeline job and give it a name. 
+
+![](images/jenkins2.png)
 
 7. Configure your pipeline 
 
@@ -100,7 +105,7 @@ On jenkins dashboard choose new item then choose pipeline job and give it a name
 ```
 git clone https://gitlab.com/talh12/apiweatherapp.git
 ```
-
+![](images/jenkins3.png)
 * Use your git credentials. 
 
 * NOTE: If you don't have credentials, Select add and add your credentials.
@@ -122,7 +127,7 @@ and that's it now you can check the weather :)
 * The application will be available at http://localhost:8081.
 
 * Weather data will be written to data.json.
-
+![](images/weather.png)
 # Contributing
 
 If you would like to contribute to this project, please fork the repository and create a pull request.
